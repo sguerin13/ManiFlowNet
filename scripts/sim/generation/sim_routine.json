@@ -1,0 +1,9 @@
+{
+    "geometryDir": "This is where the geometry files are stored will be stored: ..../simData/geometryClass",
+    "simOutputPath": "This is where the simulations will be stored: ..../simData/geometryClass - should be the same path for the identical field in run_sims.json",
+    "nIterations": 2000,
+    "meshQuality": 0.7,
+    "meshSkew":0.4,
+    "meshNCores": 10,
+    "simNCores":4
+}

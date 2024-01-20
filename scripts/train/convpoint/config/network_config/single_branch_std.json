@@ -1,0 +1,72 @@
+{
+    "_comment": "This is a sample config file for the model",
+    "sampleQty": 4096,
+    "multipleBranches": false,
+    "nCenters": 12,
+    "batchSize": 8,
+    "nLevels": 8,
+    "encoderBlocks": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+    ],
+    "encoderChannels": [
+        64,
+        64,
+        128,
+        128,
+        256,
+        256,
+        512,
+        1024
+    ],
+    "decoderBlocks": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+    ],
+    "decoderChannels": [
+        1024,
+        512,
+        256,
+        256,
+        128,
+        128,
+        64,
+        64
+    ],
+    "firstConvChannel": 168,
+    "nInletOutletLayers": 1,
+    "nonLinearity": "ReLU",
+    "nPts": [
+        2048,
+        1024,
+        512,
+        256,
+        128,
+        64,
+        16,
+        1
+    ],
+    "lr": 0.00006,
+    "reduction": "mean",
+    "valLoss": "WAPE",
+    "trainLoss": "MAE",
+    "scalerType": "std",
+    "surfaceNodesOnly": false,
+    "includeSurfaceNormals": true,
+    "randomRotation": true,
+    "nonDimensionalize": false,
+    "outputLayerChannel": 168,
+    "VPAllInputs": false
+}

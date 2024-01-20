@@ -1,0 +1,5 @@
+
+{
+    "summaryFileName": "name for summary stats.pkl",
+    "rootDataDir": "path to folder containing train/val subfolders"
+}

@@ -1,0 +1,7 @@
+{
+    "simOutputPath": "This is where the simulations will be stored: ..../simData/geometryClass",
+    "nSimsToGenerate": 1000,
+    "maxFailsAllowed": 1000,
+    "_comment_maxSimRunTime": "time in seconds",
+    "maxSimRunTime": 1800
+}

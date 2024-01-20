@@ -1,0 +1,6 @@
+{
+    "searchSteps": 1000,
+    "includeText": false,
+    "phoneNumber": "phone number if you want a text when its done",
+    "textBeltKey": "key for textBelt service"
+}

@@ -1,0 +1,5 @@
+{
+    "simDirectoryToClean": "path to newly created simulations",
+    "locationForCleanSims": "path to put cleaned simulations",
+    "locationForFailedSims": "path to put failed sims"
+}

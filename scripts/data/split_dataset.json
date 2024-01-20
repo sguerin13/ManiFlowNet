@@ -1,0 +1,4 @@
+{
+    "dataRootDir":"path to dataset root directory",
+    "splitPercentage": 80
+}

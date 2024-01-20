@@ -1,0 +1,14 @@
+{
+    "file_paths": 
+        {
+    "scaler_path": "/home/steve/ExtraData/Thesis/Data/scalers/",
+    "inference_file_path":"/home/steve/ExtraData/Thesis/Data/val/",
+    "data_path": "/home/steve/ExtraData/Thesis/Data/"
+    },
+    "network": {
+        "sample_qty": 4096,
+        "rotate" : true,
+        "surface_nodes": false,
+        "add_normals":true
+    }
+}

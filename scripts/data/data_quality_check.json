@@ -1,0 +1,4 @@
+{
+    "trainPath": "path to Data/train",
+    "quarantinePath": "path to Data/quarantine"
+}

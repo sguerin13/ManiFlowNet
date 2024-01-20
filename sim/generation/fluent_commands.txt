@@ -1,0 +1,33 @@
+'''
+Example of prompts and inputs seen in Fluent TUI
+
+'''
+
+define/materials/change-create air liquid yes constant 500 no no yes constant .0800 no no no;
+# if turbulent 
+define/models/viscous/kw-sst? yes; turn on kw-sst model
+
+# define inlet and turbulent intensity
+define/boundary-conditions/velocity-inlet inlet no no yes yes no 5 no 0 no no yes 5 10
+
+# define pressure BC
+define/boundary-conditions/pressure-outlet outlet yes no 100000 no yes no no yes 5 10 yes no no no
+
+# define wall roughness
+define/boundary-conditions/wall body no no yes rough-bc-standard no .002 no .4
+
+# set convergence criteria in the monitor  # cont. x-velo, y-velo, z-velo, k-resid, omega
+solve/monitor/residual/convergence-criteria 0.0001 0.0001 0.0001 0.0001 0.0001 0.0001
+
+/solve/monitors/residual/n-save 2000
+
+# residuals file path
+/plot/residuals-set plot-to-file 'fpath'
+
+# initialize
+solve/initialize/hyb-initialization
+
+# define solver settings:
+solve/iterate 1000
+
+

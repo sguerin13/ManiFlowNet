@@ -1,0 +1,9 @@
+{
+    "trainPath": "Path to training data folder",
+    "scalerSavePath": "folder to save scalers",
+    "normScalerFileName": "norm_scaler_ratios.pkl",
+    "ndimScalerFileName": "ndim_scaler_ratios.pkl",
+    "propsToInclude": ["Re","Eps","Visc","Rho","D"],
+    "_mode_options": ["norm","ndim"],
+    "mode": "norm"
+}

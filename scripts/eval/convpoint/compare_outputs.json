@@ -1,0 +1,22 @@
+{
+    "modelFolder": "path to model",
+    "_scalerType_options": [
+        "std",
+        "ndim",
+        "ndim_all_fps"
+    ],
+    "sampleIndex": 215,
+    "scalerType": "std",
+    "nonDimensionalize": false,
+    "VPAllInputs": true,
+    "filePaths": {
+        "pathToScalers": "path to scalers",
+        "valDataFPath": "path to validation folder"
+    },
+    "networkParams": {
+        "sampleQty": 4096,
+        "rotate": true,
+        "surfaceNodes": false,
+        "addNormals": true
+    }
+}

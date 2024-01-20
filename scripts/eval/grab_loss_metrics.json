@@ -1,0 +1,4 @@
+
+{
+    "logDir": "path to training run you want to evaluate"
+}

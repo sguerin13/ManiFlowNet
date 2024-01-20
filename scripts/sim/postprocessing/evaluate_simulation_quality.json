@@ -1,0 +1,5 @@
+{
+    "summaryFileName": "summary_data_v2.pkl",
+    "_comment_metricsToSee": "one of [mesh, fluid, residual, node, run_time]",
+    "metricToSee": "mesh"
+}

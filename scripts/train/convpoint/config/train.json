@@ -1,0 +1,23 @@
+{
+    "experimentName": "name for the folder of the training run which will be the same name as the json in the network config folder",
+    "trainParams": {
+        "gpus": 1,
+        "maxEpochs": 1000,
+        "terminateOnNan": true,
+        "refreshRate": 100,
+        "earlyStoppingPatience": 60,
+        "minDelta": 0.00001,
+        "lrPatience": 20,
+        "verboseNans": true
+    },
+    "filePaths": {
+        "dataPath": "path to root folder holding train/val folders",
+        "scalerPath": "path to scaler root folder that holds scaler types",
+        "experimentRootPath": "path to store experiment results"
+    },
+    "messageConfig" : {
+        "sendMessage": false,
+        "phoneNumber": "phone number to send text to",
+        "textBeltKey": "key for textbelt service"
+    }
+}

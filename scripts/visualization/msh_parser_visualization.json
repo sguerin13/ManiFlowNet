@@ -1,0 +1,9 @@
+{
+    "demoFilePath": "path to msh file",
+    "_options_thingsToPlot": [
+        "mesh",
+        "mesh_with_zones",
+        "outlet"
+    ],
+    "thingToPlot": "mesh_with_zones"
+}

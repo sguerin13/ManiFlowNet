@@ -1,0 +1,26 @@
+{
+"_options_scalerType":["ndim", "ndim_all_fps", "std"],
+"scalerType": "std",
+"nonDimensionalize": false,
+"VPAllInputs": false,
+"useCPU": false,
+"studyName": "name for the optuna study",
+"filePaths": {
+    "dataPath": "path to root folder holding train/val folders",
+    "experimentNamePath": "path to store optuna experiment results",
+    "expirmentDBPath": "path to store optuna experiment db"
+},
+"optunaConfig": {
+    "prunerPatience": 3000,
+    "earlyStoppingPatience": 1,
+    "learnRateSchedulerPatience": 1,
+    "maxEpochs": 1,
+    "overfit": false
+},
+"networkConfig": {
+    "surfaceOnly": false,
+    "normals": true,
+    "rotate": true,
+    "multipleBranches": false
+}
+}

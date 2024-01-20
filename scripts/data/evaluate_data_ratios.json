@@ -1,0 +1,7 @@
+{
+    "normScalerFileName": "norm_scaler_ratios.pkl",
+    "ndimScalerFileName": "ndim_scaler_ratios.pkl",
+    "_mode_options": ["norm","ndim"],
+    "mode": "norm",
+    "pathToTrainFolder": "Path/to/train/"
+}

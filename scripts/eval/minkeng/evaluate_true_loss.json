@@ -1,0 +1,13 @@
+{
+    "filePaths": {
+        "experimentParentFolder": "path to experiment folder",  
+        "pathToScalers": "path to scalers",
+        "valDataFPath": "path to validation folder"
+    },
+    "networkParams": {
+        "sampleQty": 4096,
+        "rotate": true,
+        "surfaceNodes": false,
+        "addNormals": true
+    }
+}
