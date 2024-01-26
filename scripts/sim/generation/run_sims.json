@@ -1,5 +1,6 @@
 {
     "simOutputPath": "This is where the simulations will be stored: ..../simData/geometryClass",
+    "pathToAnsysRunWBCommand": "Path to Ansys RunWB2 command, or add it to your PATH",
     "nSimsToGenerate": 1000,
     "maxFailsAllowed": 1000,
     "_comment_maxSimRunTime": "time in seconds",

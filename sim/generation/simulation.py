@@ -32,7 +32,7 @@ class SimulationCommands():
         D_file_str  = 'D_path = ' + 'r\'' + pipe_d_path + '\\\'' + ' \n'
 
         # load the script file
-        D_script_path = script_path + 'pipe_diameter.py'
+        D_script_path = os.path.join(script_path,'pipe_diameter.py')
         script_file = open(D_script_path)
         script_str = script_file.read()
         script_file.close()
@@ -44,18 +44,18 @@ class SimulationCommands():
         # meshComponent1.Refresh()
         print("Opening Geometry")
         logging.info("Opening Geometry")
-        self.geometry.Edit(IsSpaceClaimGeometry=True,Interactive = interactive)
+        self.geometry.Edit(IsSpaceClaimGeometry=True,Interactive = interactive) 
         self.geometry.SendCommand(Command=D_script,Language="Python")
         self.geometry.Exit()
         print("Closing Geometry")
         logging.info("Closing Geometry")
-        d_path = pipe_d_path + 'D_file.txt'
+        d_path = os.path.join(pipe_d_path,'D_file.txt')
         D_in, D_out = read_D(d_path)
         return D_in, D_out
 
     def grab_flow_params(self,flow_param_path):
 
-        flow_params = read_flow_params(flow_param_path + 'flow_params.csv')
+        flow_params = read_flow_params(flow_param_path)
 
         Re_list       = flow_params[0]
         Eps_list      = flow_params[1]
