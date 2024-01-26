@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     """assuming that we are running at the top of the project"""
 
-    path_to_routine = os.path.join("sim", "data_generation", "sim_routine.py")
+    path_to_routine = os.path.join(os.getcwd(),"scripts", "sim", "generation", "sim_routine.py")
 
     sim_output_path = config.simOutputPath
     n_sims_to_generate = config.nSimsToGenerate
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     while successful_sims < n_sims_to_generate:
         try:
             result = subprocess.run(
-                ["runwb2.exe", "-B", "-R", path_to_routine], timeout=max_sim_runtime
+                [os.path.join(config.pathToAnsysRunWBCommand,"runwb2.exe"), "-B", "-R", path_to_routine], timeout=max_sim_runtime
             )
 
             # check if simulation was successful
@@ -96,6 +96,7 @@ if __name__ == "__main__":
                 os.listdir(sim_output_path),
                 key=lambda x: os.path.getctime(os.path.join(sim_output_path, x)),
             )
+            fail_count += 1
             if len(files) > 0:
                 failed_file = files[-1]
                 try:

@@ -1,5 +1,5 @@
 import math
-
+import os
 # This is a snippet of code that is passed in as a string to ansys workbench
 # don't need to worry about the variables that are referenced here without 
 # being defined, they are defined in a different section in MeshCommands
@@ -21,7 +21,7 @@ for face in body.Faces:
         outlet_diameters.extend([D])
 
 
-with open(D_path + 'D_file.txt', "w") as f:
+with open(os.path.join(D_path,'D_file.txt'), "w") as f:
     f.write('Inlet Diameters:')
     for i in inlet_diameters:
         f.write(str(i) + ',')

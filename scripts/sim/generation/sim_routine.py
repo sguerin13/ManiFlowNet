@@ -1,6 +1,6 @@
 # library imports
+import json
 import os
-from scripts.helpers import load_config
 
 import sim.generation.y_plus_calcs as YPC 
 import sim.generation.ansys_utils as AU
@@ -9,14 +9,19 @@ from sim.generation.meshing import MeshCommands as MC
 from sim.generation.simulation import SimulationCommands as SC
 import time
 
+
+
 if __name__ == "__main__":
-    config = load_config(os.path.join("scripts", "sim", "generation","sim_routine.json"))
+     # ANSYS Iron Python doesn't have SimpleNameSpace so we need to use a different approach
+    with open(os.path.join(os.getcwd(),"scripts", "sim", "generation","sim_routine.json")) as f:
+        config = json.loads(f.read())
+
 
     ############################ Path and Defines ############################
 
-    geo_dir = config.geometryDir
-    flow_param_path = os.path.join("outputs", "flow_params.csv")
-    save_file_path = config.simOutputPath
+    geo_dir = config["geometryDir"]
+    flow_param_path = os.path.join(os.getcwd(),"outputs", "flow_params.csv")
+    save_file_path = config["simOutputPath"]
     
     # this is passed to ansys workbench so it can grab
     # the python files and read them as strings
@@ -25,11 +30,11 @@ if __name__ == "__main__":
     # Defines
     start_time = time.time()
     interactive = True
-    n_iter = config.nIterations # set number of iterations to run in simulation
-    msh_qual = config.meshQuality # target mesh cell quality
-    msh_skew = config.meshSkew # target mesh skew value
-    msh_n_cores = config.meshNCores # number of cores to use while meshing
-    sim_n_cores = config.simNCores # number of cores to use in fluent sim
+    n_iter = config["nIterations"] # set number of iterations to run in simulation
+    msh_qual = config["meshQuality"] # target mesh cell quality
+    msh_skew = config["meshSkew"] # target mesh skew value
+    msh_n_cores = config["meshNCores"] # number of cores to use while meshing
+    sim_n_cores = config["simNCores"] # number of cores to use in fluent sim
 
     sc = SC() # initialize simulation commands object
 
@@ -90,8 +95,12 @@ if __name__ == "__main__":
                 
 
         # create the log file
-        title_str = cad_file.split('Geometries\\')[1] + '\n'
+        base_dir = os.path.basename(os.path.normpath(geo_dir))
+        cad_file_name = os.path.basename(os.path.normpath(cad_file))
+
+        title_str = os.path.join(geo_dir,cad_file_name) + '\n'
         AU.create_log_file(log_path,title_str)
+
 
         #Grab Flow Parameters
         Re,Eps,visc,rho,P,visc_kin = sc.choose_flow_params(Re_l,
